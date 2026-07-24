@@ -1,0 +1,55 @@
+generated: '2026-07-18'
+method: searched
+source: https://apidocs.cloudhealthtech.com/
+docs: https://apidocs.cloudhealthtech.com/
+description: >-
+  Cross-cutting request/response semantics for the CloudHealth Platform REST API,
+  captured from the published API guide. The API is organized around REST with
+  predictable, resource-oriented URLs; all responses (including errors) are JSON;
+  and HTTP response codes indicate success or failure. No idempotency-key contract
+  is documented.
+authentication:
+  style: api-key
+  detail: >-
+    Per-user API Key sent as `Authorization: Bearer <API_KEY>` or as an
+    `api_key` query parameter. See authentication/cloudhealth-technologies-authentication.yml
+content_types:
+  request: application/json
+  response: application/json
+  notes: >-
+    POST/PUT require `Content-Type: application/json` or the API returns 422.
+pagination:
+  style: page-number
+  params:
+    - name: page
+      description: Page number to return.
+    - name: per_page
+      description: Results per page. Default 30, maximum 100.
+  notes: >-
+    List endpoints are paginated. Response pagination metadata structure is not
+    formally documented in the API guide.
+versioning:
+  scheme: uri-path
+  detail: >-
+    Most resources are namespaced under /v1/ (e.g. /v1/aws_accounts,
+    /v1/perspective_schemas). Some endpoints (e.g. /olap_reports) are unversioned.
+rate_limiting:
+  documented: partial
+  detail: >-
+    Rate limits are noted for specific products (Metrics API, Organization API)
+    but exact numeric limits are not published in the guide. Exceeding a limit
+    returns HTTP 429 (Too many requests / "Exceeding post rate limit").
+error_envelope:
+  format: json
+  detail: >-
+    Errors return JSON with an HTTP status code. Not RFC 9457 problem+json. See
+    errors/cloudhealth-technologies-problem-types.yml for the documented status codes.
+idempotency:
+  supported: false
+  detail: No idempotency-key header or parameter is documented for the CloudHealth API.
+request_tracing:
+  documented: false
+cross_links:
+  authentication: authentication/cloudhealth-technologies-authentication.yml
+  errors: errors/cloudhealth-technologies-problem-types.yml
+  lifecycle: lifecycle/cloudhealth-technologies-lifecycle.yml

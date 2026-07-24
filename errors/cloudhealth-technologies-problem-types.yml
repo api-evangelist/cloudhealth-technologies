@@ -1,0 +1,52 @@
+generated: '2026-07-18'
+method: searched
+source: https://apidocs.cloudhealthtech.com/
+docs: https://apidocs.cloudhealthtech.com/
+format: http-status
+description: >-
+  The CloudHealth Platform REST API uses standard HTTP response codes to indicate
+  the success or failure of a request; all responses, including errors, are
+  returned as JSON. This catalog captures the HTTP status codes documented in the
+  CloudHealth API guide with the guide's own descriptions. CloudHealth does not
+  publish an RFC 9457 problem+json envelope or a numeric application-level error
+  registry.
+envelope:
+  media_type: application/json
+  notes: Errors are returned as JSON alongside the HTTP status code.
+problems:
+  - status: 200
+    title: OK
+    meaning: Request succeeded.
+  - status: 201
+    title: Created
+    meaning: Resource created successfully.
+  - status: 204
+    title: No Content
+    meaning: Request succeeded with no response body.
+  - status: 400
+    title: Bad Request
+    meaning: Header missing.
+  - status: 401
+    title: Unauthorized
+    meaning: Currently logged out / not authenticated.
+  - status: 403
+    title: Forbidden
+    meaning: Bad API Key.
+  - status: 404
+    title: Not Found
+    meaning: Bad endpoint.
+  - status: 408
+    title: Request Timeout
+    meaning: Exceeding read timeout.
+  - status: 422
+    title: Unprocessable Entity
+    meaning: Input format error (e.g. missing Content-Type application/json on POST/PUT).
+  - status: 429
+    title: Too Many Requests
+    meaning: Exceeding post rate limit.
+  - status: 500
+    title: Internal Service Error
+    meaning: General server error.
+  - status: 503
+    title: Service Not Available
+    meaning: Back end capped out.

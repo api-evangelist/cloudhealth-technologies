@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: searched
+source: https://apidocs.cloudhealthtech.com/
+description: >-
+  Versioning and change-communication posture for the CloudHealth Platform REST
+  API, captured from the published API guide and the product's current home under
+  Broadcom. CloudHealth (originally CloudHealth Technologies, acquired by VMware in
+  2018 and now sold as CloudHealth by Broadcom) versions resources in the URI path.
+  There is no published deprecation-policy page, Sunset-header contract, or public
+  status page for the API; API additions and changes are communicated to customers
+  via Product Updates emails rather than a dated public changelog.
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: >-
+    Most resources are namespaced under /v1/; some endpoints (e.g. /olap_reports)
+    are unversioned.
+  docs: https://apidocs.cloudhealthtech.com/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support is documented.
+change_communication:
+  mechanism: product-update-emails
+  detail: >-
+    "CloudHealth sends information on additions and changes to the API in the
+    Product Updates emails that go out to all customers." No dated public changelog.
+sla:
+  url: null
+status_page: null
+notes: >-
+  The historical developer docs repo (github.com/CloudHealth/cht_api_guide) and
+  the CloudHealth GitHub organization were archived on 2026-03-24, with
+  engineering migrated to internal Broadcom repositories. Current product docs
+  live under techdocs.broadcom.com (VMware Tanzu CloudHealth).

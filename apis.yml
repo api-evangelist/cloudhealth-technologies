@@ -1,8 +1,27 @@
 aid: cloudhealth-technologies
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cloudhealth-technologies.png
 name: CloudHealth Technologies
-description: 'CloudHealth Technologies is a company surfaced as a portfolio company of kleiner-perkins
-  and added to the API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: 'CloudHealth Technologies is a cloud financial management (FinOps) and multi-cloud governance
+  platform, founded in Boston and backed by Kleiner Perkins before being acquired by VMware in 2018 and
+  now sold as CloudHealth by Broadcom. The platform helps organizations analyze and optimize cloud cost,
+  usage, security, and governance across AWS, Microsoft Azure, and Google Cloud. It exposes a public developer
+  surface: a REST API (organized around resource-oriented URLs, JSON responses, and standard HTTP status
+  codes) and a GraphQL API for programmatically retrieving and managing accounts, assets, perspectives,
+  billing rules, metrics, reporting (OLAP reports), policies, tagging, SSO, and partner/organization administration.
+  Authentication is via a per-user API Key presented as a bearer token or api_key query parameter, enforcing
+  the same role and organization scoping as the platform UI.'
 url: https://raw.githubusercontent.com/api-evangelist/cloudhealth-technologies/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,13 +31,73 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Enterprise
-apis: []
+- Cloud Cost Management
+- FinOps
+- Cloud Governance
+- Multi-Cloud
+- Cloud Management Platform
+apis:
+- aid: cloudhealth-technologies:cloudhealth-platform-api
+  name: CloudHealth Platform API
+  humanURL: https://apidocs.cloudhealthtech.com/
+  baseURL: https://chapi.cloudhealthtech.com
+  description: The CloudHealth Platform REST API programmatically retrieves and manages data from the
+    CloudHealth Platform — AWS/Azure/GCP accounts, assets, perspectives, billing rules, metrics, OLAP
+    reports, policies, tagging, SSO, and organization/partner administration. Resource-oriented URLs,
+    JSON responses, standard HTTP status codes, and per-user API Key authentication.
+  tags:
+  - FinOps
+  - Cloud Cost Management
+  - Reporting
+  properties:
+  - url: https://apidocs.cloudhealthtech.com/
+    type: Documentation
+  - url: https://apidocs.cloudhealthtech.com/
+    type: APIReference
+  - url: authentication/cloudhealth-technologies-authentication.yml
+    type: Authentication
+  - url: conventions/cloudhealth-technologies-conventions.yml
+    type: Conventions
+  - url: errors/cloudhealth-technologies-problem-types.yml
+    type: ErrorCatalog
+  - url: lifecycle/cloudhealth-technologies-lifecycle.yml
+    type: Lifecycle
+common:
+- type: DomainSecurity
+  url: security/cloudhealth-technologies-domain-security.yml
+- url: https://apidocs.cloudhealthtech.com/
+  type: Documentation
+- url: https://apidocs.cloudhealthtech.com/
+  type: APIReference
+- url: https://www.broadcom.com/products/software/finops/cloudhealth
+  type: Website
+- url: https://www.broadcom.com/products/software/finops/cloudhealth
+  type: Pricing
+- url: https://techdocs.broadcom.com/us/en/vmware-tanzu/cloudhealth/tanzu-cloudhealth/saas/tnz-cloudhealth/index.html
+  type: GettingStarted
+- url: https://github.com/CloudHealth
+  type: GitHubOrganization
+- url: authentication/cloudhealth-technologies-authentication.yml
+  type: Authentication
+- url: conventions/cloudhealth-technologies-conventions.yml
+  type: Conventions
+- url: errors/cloudhealth-technologies-problem-types.yml
+  type: ErrorCatalog
+- url: lifecycle/cloudhealth-technologies-lifecycle.yml
+  type: Lifecycle
+- type: LLMsTxt
+  url: llms/cloudhealth-technologies-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
