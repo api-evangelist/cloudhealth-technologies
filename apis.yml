@@ -78,6 +78,11 @@ apis:
   - url: lifecycle/cloudhealth-technologies-lifecycle.yml
     type: Lifecycle
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/vmware/
+  name: VMware
+  x-relationship: acquired
+  x-evidence: "CloudHealth Technologies is a cloud financial management (FinOps) and multi-cloud governance platform, founded in Boston and backed by Kleiner Perkins before being acquired by VMware in 2018 and now sold as CloudHealth by Broadcom."
 - type: DomainSecurity
   url: security/cloudhealth-technologies-domain-security.yml
 - url: https://apidocs.cloudhealthtech.com/
